@@ -1,5 +1,5 @@
 // app.js
-// Fetches users from JSONPlaceholder, filters by company catchPhrase,
+// Fetches users from JSONPlaceholder, filters by company info,
 // and formats the result into readable strings.
 
 const API_URL = "https://jsonplaceholder.typicode.com/users";
