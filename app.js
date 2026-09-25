@@ -13,10 +13,10 @@ async function getFilteredUsers() {
 
   const users = await response.json();
 
-  // Keep only users whose company catchPhrase mentions "group" or "service"
+  // Keep only users whose company name OR catchPhrase mentions "group" or "service"
   const filtered = users.filter(({ company }) => {
-    const phrase = company.catchPhrase.toLowerCase();
-    return phrase.includes("group") || phrase.includes("service");
+    const combinedText = `${company.name} ${company.catchPhrase}`.toLowerCase();
+    return combinedText.includes("group") || combinedText.includes("service");
   });
 
   // Turn each matching user into a formatted string using destructuring
